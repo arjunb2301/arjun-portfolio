@@ -253,13 +253,15 @@ function MetricCard({
   return (
     <div
       className={`glass-panel metric-ring metric-pulse relative rounded-[28px] p-6 text-center ${
-        featured ? "min-h-[180px] md:min-h-[220px]" : "min-h-[165px]"
+        featured
+          ? "min-h-[190px] md:min-h-[235px] md:scale-[1.035] md:bg-white/[0.10]"
+          : "min-h-[165px]"
       }`}
       style={{ animationDelay: `${index * 0.8}s` }}
     >
       <div
         className={`mb-3 ${
-          featured ? "text-5xl md:text-6xl" : "text-4xl md:text-5xl"
+          featured ? "text-5xl md:text-7xl" : "text-4xl md:text-5xl"
         } font-semibold tracking-tight`}
       >
         <CountValue
@@ -269,7 +271,11 @@ function MetricCard({
           fallback={metric.value}
         />
       </div>
-      <p className="mx-auto max-w-[16rem] text-sm leading-6 text-white/75 md:text-base">
+      <p
+        className={`mx-auto max-w-[16rem] leading-6 ${
+          featured ? "text-base text-white/82 md:text-lg" : "text-sm text-white/75 md:text-base"
+        }`}
+      >
         {metric.label}
       </p>
     </div>
@@ -365,7 +371,7 @@ export default function Home() {
   );
 
   return (
-    <main className="relative min-h-screen pb-16 text-white">
+    <main className="relative min-h-screen pb-24 text-white md:pb-16">
       <AnimatedBackground />
 
       <header className="sticky top-0 z-40 border-b border-white/8 bg-[#120f22]/45 backdrop-blur-xl">
@@ -397,7 +403,7 @@ export default function Home() {
 
           <a
             href="mailto:arjun.bhattacharya@outlook.com"
-            className="rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm text-white/85 transition hover:bg-white/12"
+            className="hidden rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm text-white/85 transition hover:bg-white/12 md:inline-flex"
           >
             Connect
           </a>
@@ -424,6 +430,15 @@ export default function Home() {
               className="rounded-full bg-white px-7 py-3 text-sm font-medium text-slate-900 transition hover:scale-[1.02]"
             >
               View Experience
+            </a>
+
+            <a
+              href="/Arjun_Bhattacharya_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-white/15 bg-white/6 px-7 py-3 text-sm font-medium text-white/86 transition hover:bg-white/10"
+            >
+              Download Resume
             </a>
 
             <a
@@ -622,6 +637,24 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <nav className="mobile-bottom-nav fixed bottom-3 left-1/2 z-50 flex w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 items-center justify-between rounded-full border border-white/10 bg-[#140f25]/75 px-4 py-3 backdrop-blur-xl md:hidden">
+        <a href="#top" className="text-xs text-white/80">
+          Home
+        </a>
+        <a href="#impact" className="text-xs text-white/80">
+          Impact
+        </a>
+        <a href="#experience" className="text-xs text-white/80">
+          Experience
+        </a>
+        <a href="#capabilities" className="text-xs text-white/80">
+          Skills
+        </a>
+        <a href="#contact" className="text-xs text-white/80">
+          Contact
+        </a>
+      </nav>
     </main>
   );
 }

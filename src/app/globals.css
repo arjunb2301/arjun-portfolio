@@ -191,6 +191,12 @@ h4 {
   text-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
 }
 
+.mobile-bottom-nav {
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.28),
+    0 4px 12px rgba(92, 106, 189, 0.12);
+}
+
 @keyframes metricPulse {
   0%, 100% {
     transform: translateY(0) scale(1);
