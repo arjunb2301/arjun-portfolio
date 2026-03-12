@@ -14,9 +14,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Arjun Bhattacharya | Supply Chain & Operations Leader",
+  title: "Arjun Bhattacharya | Product Strategy & Business Transformation",
   description:
-    "Supply Chain & Operations Leader with 11+ years driving large-scale retail and e-commerce supply chain transformation through governance, operational excellence and cross-functional leadership.",
+    "Built on 11+ years of experience turning complex problems into structured, scalable outcomes through strategic thinking, cross-functional execution, and operational depth.",
 };
 
 export default function RootLayout({
@@ -26,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable}`}>
-        {children}
-      </body>
+      <body className={`${inter.variable} ${playfair.variable}`}>{children}</body>
     </html>
   );
 }

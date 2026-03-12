@@ -20,17 +20,19 @@ type ExperienceItem = {
   moreBullets: string[];
 };
 
+type CaseStudy = {
+  title: string;
+  category: string;
+  description: string;
+  tags: string[];
+  href: string;
+};
+
 const heroMetrics: Metric[] = [
   {
-    value: "40%",
-    end: 40,
-    suffix: "%",
-    label: "Reverse Logistics Leakage Reduction",
-  },
-  {
-    value: "200%",
-    end: 200,
-    suffix: "%",
+    value: "2x",
+    end: 2,
+    suffix: "x",
     label: "Business Growth Enabled",
   },
   {
@@ -41,24 +43,61 @@ const heroMetrics: Metric[] = [
     label: "Working Capital Unlocked",
   },
   {
-    value: "25% → 8%",
-    label: "SLA Breach Reduction",
+    value: "50%",
+    end: 50,
+    suffix: "%",
+    label: "Faster Mind-to-Market",
   },
   {
-    value: "20%",
-    end: 20,
+    value: "35%",
+    end: 35,
     suffix: "%",
-    label: "Procurement Cost Reduction",
+    label: "Increase in Sellable SKUs",
+  },
+  {
+    value: "25%",
+    end: 25,
+    suffix: "%",
+    label: "Customer Satisfaction Improvement",
   },
 ];
 
 const impactMetrics: Metric[] = [
-  { value: "50%", end: 50, suffix: "%", label: "Reduction in Return Pendency" },
-  { value: "35%", end: 35, suffix: "%", label: "Increase in Sellable SKUs" },
-  { value: "97%", end: 97, suffix: "%", label: "SLA Adherence Across Operations Teams" },
-  { value: "25%", end: 25, suffix: "%", label: "Customer Satisfaction Improvement" },
-  { value: "60%", end: 60, suffix: "%", label: "Reduction in Reverse Operations Leakage" },
-  { value: "60 → 28", label: "Days of Inventory Reduced" },
+  {
+    value: "50% → 98%",
+    label: "LMDO (New Product) Adoption / Compliance Improvement",
+  },
+  {
+    value: "97%",
+    end: 97,
+    suffix: "%",
+    label: "SLA Adherence Across Teams",
+  },
+  {
+    value: "50%",
+    end: 50,
+    suffix: "%",
+    label: "Reduction in Return Pendency",
+  },
+  {
+    value: "60%",
+    end: 60,
+    suffix: "%",
+    label: "Reduction in Reverse Operations Leakage",
+  },
+  {
+    value: "₹2.9 Cr",
+    end: 2.9,
+    prefix: "₹",
+    suffix: " Cr",
+    label: "Holding Cost Savings Unlocked",
+  },
+  {
+    value: "94%",
+    end: 94,
+    suffix: "%",
+    label: "Vendor Delivery Success",
+  },
 ];
 
 const experience: ExperienceItem[] = [
@@ -67,7 +106,7 @@ const experience: ExperienceItem[] = [
     role: "Manager – Growth and Strategy",
     period: "Nov 2021 – Present",
     summary:
-      "Scaled supply chain readiness, governance and operational capability to support aggressive growth and nationwide expansion.",
+      "Drove growth readiness by aligning supply chain capability, partner scale-up, and execution discipline with business expansion goals.",
     visibleBullets: [
       "Enabled 200% business growth by aligning supply chain readiness with revenue and expansion strategy.",
       "Expanded vendor coverage and increased sellable SKUs by 35%, enabling nationwide scale.",
@@ -86,7 +125,7 @@ const experience: ExperienceItem[] = [
     role: "Manager – Supply Chain Control Tower",
     period: "Nov 2021 – Present",
     summary:
-      "Led reverse logistics governance, first-mile control and brand-level process transformation across Ajio business operations.",
+      "Led process transformation across reverse and first-mile operations, improving control, reducing leakage, and enabling better customer and partner outcomes.",
     visibleBullets: [
       "Reduced overall return pendency by 50% within 4 months.",
       "Cut reverse logistics leakages by 40% through process redesign and governance controls.",
@@ -115,7 +154,7 @@ const experience: ExperienceItem[] = [
     role: "Associate Manager – SCM",
     period: "Jul 2019 – Nov 2021",
     summary:
-      "Managed reverse, first-mile and last-mile programs, unlocking working capital and improving operational compliance at scale.",
+      "Managed high-scale operational programs across reverse, first-mile, and last-mile flows, unlocking working capital and improving compliance, speed, and execution quality.",
     visibleBullets: [
       "Released ₹11 Cr worth shipments through AOP monitoring and cross-functional execution.",
       "Reduced reverse operations leakages by 60% within 8 months of monitoring.",
@@ -143,7 +182,7 @@ const experience: ExperienceItem[] = [
     role: "Deputy Manager – Supply Chain Planning",
     period: "Aug 2018 – Jul 2019",
     summary:
-      "Improved planning discipline, reduced cost and supported rapid business expansion through structured forecasting and coordination.",
+      "Improved planning efficiency and cost discipline through forecasting, inventory optimization, and cross-functional coordination during rapid business expansion.",
     visibleBullets: [
       "Reduced procurement cost by 20% through planning and forecasting optimization.",
       "Reduced days of inventory from 60 to 28.",
@@ -161,7 +200,7 @@ const experience: ExperienceItem[] = [
     role: "Assistant Manager – SCM",
     period: "May 2017 – Jun 2018",
     summary:
-      "Ran warehouse operations and standardization efforts across a large operational footprint.",
+      "Managed warehouse operations and process standardization across a large operational footprint, building execution discipline through systems and structured workflows.",
     visibleBullets: [
       "Managed end-to-end warehouse operations including forecasting, GRN, production analysis, quality, logistics and reverse logistics.",
       "Led a team of 10 executives and 90 contract workers.",
@@ -175,7 +214,7 @@ const experience: ExperienceItem[] = [
     role: "Engineer – 2nd Level Operation",
     period: "Sep 2012 – Sep 2014",
     summary:
-      "Improved network operations responsiveness and customer issue resolution.",
+      "Supported network operations by improving issue resolution speed, reducing escalations, and strengthening service reliability in high-volume environments.",
     visibleBullets: [
       "Reduced Umobile customer billing problems by 95%.",
       "Reduced customer escalation by 70% for Airtel Bangladesh within 2 months of operations starting.",
@@ -187,7 +226,7 @@ const experience: ExperienceItem[] = [
     role: "Internship",
     period: "Apr 2016 – Jun 2016",
     summary:
-      "Worked on plant-level energy and spare-parts optimization initiatives.",
+      "Worked on plant-level efficiency initiatives focused on energy optimization, inventory standardization, and process acceleration.",
     visibleBullets: [
       "Reduced energy requirements by 10% across 3 plants in Baramati.",
       "Standardized 34,000+ spare parts across plants.",
@@ -195,6 +234,41 @@ const experience: ExperienceItem[] = [
       "Accelerated production process by 40%.",
     ],
     moreBullets: [],
+  },
+];
+
+const caseStudies = [
+  {
+    title: "MoveMate",
+    category: "Product Strategy / Growth",
+    description:
+      "Built a growth-oriented fitness product strategy by combining user insight, competitive analysis, roadmap thinking, and go-to-market planning.",
+    tags: ["Product Strategy", "GTM", "Roadmap", "Growth"],
+    href: "/decks/movemate.pdf",
+  },
+  {
+    title: "EcoSwap",
+    category: "Marketplace Product / Agile Execution",
+    description:
+      "Designed a circular-economy marketplace concept using user stories, prioritization, sprint planning, and MVP thinking to shape a scalable product direction.",
+    tags: ["Marketplace", "Agile", "MVP", "Product Thinking"],
+    href: "/decks/ecoswap.pdf",
+  },
+  {
+    title: "Gift Away",
+    category: "Product Design / UX",
+    description:
+      "Explored a gifting-based product experience through user research, personas, journey thinking, and design-led problem solving around everyday user pain points.",
+    tags: ["UX", "User Research", "Personas", "Design Thinking"],
+    href: "/decks/gift-away.pdf",
+  },
+  {
+    title: "L&D Program Management",
+    category: "System Design / Workflow Experience",
+    description:
+      "Reframed a learning and development workflow challenge through stakeholder needs, process mapping, and UX thinking to improve clarity, coordination, and usability.",
+    tags: ["UX Strategy", "Workflow Design", "Stakeholder Mapping", "Systems Thinking"],
+    href: "/decks/ld-program-management.pdf",
   },
 ];
 
@@ -229,7 +303,9 @@ function CountValue({
     const animate = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(end * eased);
+      const current =
+        end % 1 === 0 ? Math.round(end * eased) : Math.round(end * eased * 10) / 10;
+
       setDisplayValue(`${prefix}${current}${suffix}`);
 
       if (progress < 1) requestAnimationFrame(animate);
@@ -252,17 +328,13 @@ function MetricCard({
 }) {
   return (
     <div
-      className={`glass-panel metric-ring metric-pulse relative rounded-[28px] p-6 text-center ${
-        featured
-          ? "min-h-[190px] md:min-h-[235px] md:scale-[1.035] md:bg-white/[0.10]"
-          : "min-h-[165px]"
-      }`}
+      className="glass-panel metric-ring metric-pulse relative min-h-[185px] rounded-[28px] p-6 text-center"
       style={{ animationDelay: `${index * 0.8}s` }}
     >
       <div
-        className={`mb-3 ${
-          featured ? "text-5xl md:text-7xl" : "text-4xl md:text-5xl"
-        } font-semibold tracking-tight`}
+        className={`mb-3 font-semibold tracking-tight ${
+          featured ? "text-5xl md:text-6xl" : "text-4xl md:text-5xl"
+        }`}
       >
         <CountValue
           end={metric.end}
@@ -337,34 +409,72 @@ export default function Home() {
   const capabilityGroups = useMemo(
     () => [
       {
-        title: "Operational Leadership",
-        items: [
-          "Supply Chain Governance",
-          "Reverse Logistics",
-          "Vendor Management",
-          "Control Tower Operations",
-        ],
-      },
-      {
-        title: "Planning & Optimization",
-        items: [
-          "Demand Planning",
-          "Inventory Optimization",
-          "Forecasting",
-          "Warehouse & Distribution",
-        ],
-      },
-      {
-        title: "Systems & Analytics",
-        items: ["SAP", "Power BI", "Tableau", "Advanced Excel", "SQL"],
-      },
-      {
         title: "Product & Strategy",
-        items: ["Jira", "Miro", "Agile", "SCRUM", "RACI Matrix"],
+        items: [
+          "Product Strategy",
+          "Problem Framing",
+          "Go-to-Market Strategy",
+          "Customer Segmentation",
+          "Business Model Design",
+          "Value Proposition Design",
+        ],
       },
       {
-        title: "Emerging Technology",
-        items: ["Python (Basic)", "R (Basic)", "ChatGPT", "Midjourney", "Gemini"],
+        title: "User & Market Understanding",
+        items: [
+          "Persona Building",
+          "User Research",
+          "Customer Journey Mapping",
+          "Pain-Point Identification",
+          "Competitive Analysis",
+          "Market Analysis",
+        ],
+      },
+      {
+        title: "Operations & Systems",
+        items: [
+          "Supply Chain Operations",
+          "Control Tower Management",
+          "Reverse Logistics",
+          "Planning & Forecasting",
+          "Inventory Optimization",
+          "Warehouse Management",
+        ],
+      },
+      {
+        title: "Transformation & Execution",
+        items: [
+          "Business Transformation",
+          "Cross-Functional Execution",
+          "Process Design",
+          "Stakeholder Alignment",
+          "Change Enablement",
+          "Operational Scaling",
+        ],
+      },
+      {
+        title: "Delivery & Ways of Working",
+        items: [
+          "Agile",
+          "Scrum",
+          "Roadmap Planning",
+          "MVP Definition",
+          "Experiment Design",
+          "Prioritization Frameworks",
+          "Structured Problem Solving",
+        ],
+      },
+      {
+        title: "Analytics & Systems",
+        items: [
+          "KPI Design",
+          "Data Analysis",
+          "Tableau",
+          "Power BI",
+          "SQL",
+          "Advanced Excel",
+          "SAP / ERP Systems",
+        ],
       },
     ],
     []
@@ -393,8 +503,11 @@ export default function Home() {
             <a className="nav-link text-sm" href="#experience">
               Experience
             </a>
-            <a className="nav-link text-sm" href="#capabilities">
-              Capabilities
+            <a className="nav-link text-sm" href="#strengths">
+              Strengths
+            </a>
+            <a className="nav-link text-sm" href="#case-studies">
+              Case Studies
             </a>
             <a className="nav-link text-sm" href="#contact">
               Contact
@@ -410,18 +523,18 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="top" className="section-shell hero-stage relative pt-24 md:pt-32">
+      <section id="top" className="section-shell hero-stage relative pt-32 md:pt-40">
         <div className="fade-up mx-auto max-w-5xl text-center">
-          <p className="section-label mb-5">Supply Chain • Strategy • Leadership</p>
+          <p className="section-label mb-5">Product • Strategy • Transformation • Execution</p>
 
           <h1 className="hero-name mx-auto max-w-5xl text-5xl leading-[0.95] md:text-7xl">
-            Arjun Bhattacharya
+            Product Strategy &amp; Business Transformation
           </h1>
 
-          <p className="fade-up-delay-1 mx-auto mt-7 max-w-4xl px-2 text-lg leading-8 text-white/82 md:max-w-3xl md:text-[1.9rem] md:leading-[3.1rem]">
-            Supply Chain &amp; Operations Leader with 11+ years driving large-scale
-            retail and e-commerce supply chain transformation through governance,
-            operational excellence and cross-functional leadership.
+          <p className="fade-up-delay-1 mx-auto mt-7 max-w-4xl px-2 text-lg leading-8 text-white/82 md:max-w-4xl md:text-[1.6rem] md:leading-[2.7rem]">
+            Built on 11+ years of experience turning complex problems into structured,
+            scalable outcomes through strategic thinking, cross-functional execution,
+            and operational depth.
           </p>
 
           <div className="fade-up-delay-2 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -436,7 +549,7 @@ export default function Home() {
               href="/Arjun_Bhattacharya_Resume.pdf"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-white/15 bg-white/6 px-7 py-3 text-sm font-medium text-white/86 transition hover:bg-white/10"
+              className="rounded-full border border-purple-400/40 bg-purple-500/20 px-7 py-3 text-sm font-medium text-white/90 transition hover:bg-purple-500/30"
             >
               Download Resume
             </a>
@@ -455,19 +568,19 @@ export default function Home() {
         <div className="mx-auto mt-20 max-w-6xl md:mt-24">
           <div className="grid gap-5 md:grid-cols-6">
             <div className="md:col-span-2">
-              <MetricCard metric={heroMetrics[0]} index={0} />
+              <MetricCard metric={heroMetrics[0]} index={0} featured />
             </div>
             <div className="md:col-span-2">
-              <MetricCard metric={heroMetrics[1]} index={1} featured />
+              <MetricCard metric={heroMetrics[1]} index={1} />
             </div>
             <div className="md:col-span-2">
               <MetricCard metric={heroMetrics[2]} index={2} />
             </div>
             <div className="md:col-start-2 md:col-span-2">
-              <MetricCard metric={heroMetrics[4]} index={3} />
+              <MetricCard metric={heroMetrics[3]} index={3} />
             </div>
             <div className="md:col-span-2">
-              <MetricCard metric={heroMetrics[3]} index={4} />
+              <MetricCard metric={heroMetrics[4]} index={4} />
             </div>
           </div>
         </div>
@@ -476,10 +589,10 @@ export default function Home() {
       <section id="impact" className="section-shell pt-24 md:pt-28">
         <div className="text-center">
           <p className="section-label mb-4">Impact</p>
-          <h2 className="text-4xl md:text-5xl">Operational results that scale</h2>
+          <h2 className="text-4xl md:text-5xl">Change that shows up in numbers</h2>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-white/70 md:text-lg">
-            A portfolio of improvements across growth, governance, customer experience,
-            working capital and operational control.
+            A deeper view into adoption, transformation, execution discipline, cost impact, and
+            operational improvement.
           </p>
         </div>
 
@@ -493,45 +606,27 @@ export default function Home() {
       <section id="about" className="section-shell pt-24 md:pt-28">
         <div className="glass-panel rounded-[32px] p-8 md:p-12">
           <p className="section-label mb-4">About</p>
-          <h2 className="text-4xl md:text-5xl">Leading with clarity, building with intent</h2>
+          <h2 className="text-4xl md:text-5xl">Turning strategy into action</h2>
           <p className="mt-6 max-w-4xl text-lg leading-8 text-white/76">
-            I specialize in transforming complex supply chain operations into scalable,
-            efficient systems. Over the past 11 years I have led initiatives across retail
-            and e-commerce ecosystems including Reliance Retail, Myntra and Flipkart,
-            driving measurable impact through governance, analytics and cross-functional
-            collaboration.
+            I work best in complex environments where strategy needs to translate into action. Over
+            the years, I’ve built experience across product thinking, business transformation, and
+            execution — helping teams turn ambiguity into structure, improve outcomes, and scale
+            with clarity.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <span className="tag">Governance-driven execution</span>
-            <span className="tag">Cross-functional leadership</span>
-            <span className="tag">Operational excellence</span>
-            <span className="tag">Business impact</span>
+            <span className="tag">Strategic thinking</span>
+            <span className="tag">Cross-functional execution</span>
+            <span className="tag">Business transformation</span>
+            <span className="tag">Operational depth</span>
           </div>
         </div>
       </section>
 
-      <section id="experience" className="section-shell pt-24 md:pt-28">
+      <section id="strengths" className="section-shell pt-24 md:pt-28">
         <div className="mb-10 text-center">
-          <p className="section-label mb-4">Experience</p>
-          <h2 className="text-4xl md:text-5xl">Career built on measurable outcomes</h2>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-white/70 md:text-lg">
-            Visible highlights stay sharp and concise. Expand each card to view deeper
-            operational problem-solving, governance improvements and cross-functional wins.
-          </p>
-        </div>
-
-        <div className="space-y-6">
-          {experience.map((item, index) => (
-            <ExperienceCard key={`${item.company}-${item.role}`} item={item} index={index} />
-          ))}
-        </div>
-      </section>
-
-      <section id="capabilities" className="section-shell pt-24 md:pt-28">
-        <div className="mb-10 text-center">
-          <p className="section-label mb-4">Capabilities</p>
-          <h2 className="text-4xl md:text-5xl">A leadership toolkit shaped by systems thinking</h2>
+          <p className="section-label mb-4">Core Strengths</p>
+          <h2 className="text-4xl md:text-5xl">How I work across product, strategy, and execution</h2>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -550,49 +645,98 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="experience" className="section-shell pt-24 md:pt-28">
+        <div className="mb-10 text-center">
+          <p className="section-label mb-4">Selected Experience</p>
+          <h2 className="text-4xl md:text-5xl">Work shaped by scale, change, and outcomes</h2>
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-white/70 md:text-lg">
+            A curated view of roles where I drove growth, transformation, execution quality, and
+            cross-functional results.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {experience.map((item, index) => (
+            <ExperienceCard key={`${item.company}-${item.role}`} item={item} index={index} />
+          ))}
+        </div>
+      </section>
+
+      <section id="case-studies" className="section-shell pt-24 md:pt-28">
+        <div className="mb-10 text-center">
+          <p className="section-label mb-4">Featured Case Studies</p>
+          <h2 className="text-4xl md:text-5xl">Problem solving across different business contexts</h2>
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-white/70 md:text-lg">
+            A selection of product, strategy, and transformation work that reflects how I approach
+            problem framing, decision-making, and execution across different business contexts.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {caseStudies.map((study) => (
+            <div key={study.title} className="glass-panel rounded-[30px] p-7">
+              <p className="section-label mb-3">{study.category}</p>
+              <h3 className="text-3xl">{study.title}</h3>
+              <p className="mt-4 text-white/74">{study.description}</p>
+
+              <div className="mt-5 flex flex-wrap gap-3">
+                {study.tags.map((tag) => (
+                  <span key={tag} className="tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={study.href}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-7 inline-flex rounded-full border border-white/15 bg-white/6 px-5 py-2.5 text-sm text-white/88 transition hover:bg-white/10"
+              >
+                View Deck
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="section-shell pt-24 md:pt-28">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="glass-panel rounded-[30px] p-8">
-            <p className="section-label mb-4">Education</p>
-            <h2 className="text-4xl md:text-5xl">Foundations</h2>
+            <p className="section-label mb-4">Education & Credentials</p>
+            <h2 className="text-4xl md:text-5xl">Education</h2>
 
             <div className="mt-8 space-y-6 text-white/78">
               <div>
                 <h3 className="text-xl font-semibold">PGP in Business</h3>
-                <p className="mt-1">SDA Bocconi Asia Center, Mumbai • 2017</p>
+                <p className="mt-1">SDA Bocconi Asia Center, Mumbai · 2017</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold">Diploma in International Business</h3>
-                <p className="mt-1">SDA Bocconi, Milan, Italy • 2017</p>
+                <p className="mt-1">SDA Bocconi, Milan, Italy · 2017</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold">B.E.</h3>
-                <p className="mt-1">Bangalore Institute of Technology • 2012</p>
+                <p className="mt-1">Bangalore Institute of Technology · 2012</p>
               </div>
             </div>
           </div>
 
           <div className="glass-panel rounded-[30px] p-8">
-            <p className="section-label mb-4">Leadership & Projects</p>
-            <h2 className="text-4xl md:text-5xl">Beyond operations</h2>
+            <p className="section-label mb-4">Education & Credentials</p>
+            <h2 className="text-4xl md:text-5xl">Credentials & Leadership</h2>
 
             <div className="mt-8 space-y-6 text-white/78">
               <div>
                 <h3 className="text-xl font-semibold">Token of Achievement</h3>
                 <p className="mt-1">
-                  Only student to receive recognition for outstanding performance in Leadership course.
+                  Recognized for outstanding performance in Leadership course at SDA Bocconi Asia Center.
                 </p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold">Co-Founder, Operations Club</h3>
                 <p className="mt-1">
                   Co-founded Operations Club at SDA Bocconi Asia Center and organized an Omni-Channel panel discussion within a month of launch.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">Research & Projects</h3>
-                <p className="mt-1">
-                  Developed a simulation program for Operations &amp; SCM coursework at SDA Bocconi, Milano, and built a Go-To-Market strategy for an online lottery company entering the Chinese market.
                 </p>
               </div>
             </div>
@@ -602,11 +746,11 @@ export default function Home() {
 
       <section id="contact" className="section-shell pt-24 md:pt-28">
         <div className="glass-panel rounded-[34px] px-6 py-10 text-center md:px-12 md:py-14">
-          <p className="section-label mb-4">Contact</p>
-          <h2 className="text-4xl md:text-5xl">Let’s connect</h2>
+          <p className="section-label mb-4">Let’s Connect</p>
+          <h2 className="text-4xl md:text-5xl">Open to meaningful conversations</h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/70 md:text-lg">
-            Open to conversations around supply chain leadership, operations transformation,
-            strategy, and role opportunities.
+            Open to conversations around product, strategy, business transformation, and
+            cross-functional problem solving.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-4 text-white/82">
@@ -648,8 +792,8 @@ export default function Home() {
         <a href="#experience" className="text-xs text-white/80">
           Experience
         </a>
-        <a href="#capabilities" className="text-xs text-white/80">
-          Skills
+        <a href="#case-studies" className="text-xs text-white/80">
+          Work
         </a>
         <a href="#contact" className="text-xs text-white/80">
           Contact
