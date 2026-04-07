@@ -237,7 +237,15 @@ const experience: ExperienceItem[] = [
   },
 ];
 
-const caseStudies = [
+const caseStudies: CaseStudy[] = [
+  {
+    title: "FinGrow",
+    category: "Product Strategy / Go-To-Market",
+    description:
+      "Built a go-to-market strategy for an AI-driven investment platform, defining target users, positioning, channels, and growth plan to drive acquisition, activation, and retention.",
+    tags: ["Product Strategy", "GTM", "Growth", "Fintech", "User Experience"],
+    href: "/decks/fingrow.pdf",
+  },
   {
     title: "MoveMate",
     category: "Product Strategy / Growth",
